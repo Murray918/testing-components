@@ -1,6 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
+//this is a proxy component for making a test input
 const TextInput = props => {
   const {
     type,
@@ -12,6 +13,7 @@ const TextInput = props => {
     autocomplete,
     ...restProps
   } = props
+
   return (
     <input
       style={style}
