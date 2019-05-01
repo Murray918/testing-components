@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import ListMapper from './ListMapper/ListMapper'
 import Card from './Card/Card'
+import arrayToMap from './Utils/TestArray'
 
 class App extends Component {
   handleClick = event => {
@@ -10,15 +11,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Testing React Co console.log(int)mponents</h1>
-        {/* this is the ListMapper it creates a <ul> with an array and any component that is passes to it */}
+      <main className="App">
+        <h1>Testing React Components</h1>
         <ListMapper array={arrayToMap} component={Card}>
           <button type="submit" onClick={this.handleClick}>
             Click
           </button>
         </ListMapper>
-      </div>
+      </main>
     )
   }
 }
