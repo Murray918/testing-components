@@ -1,15 +1,18 @@
 import React from 'react'
+import { PropTypes } from 'prop-types'
 
-export const Form = props => {
-  const { handleSubmit, ...restProps } = props
+const Form = ({ styles, handleSubmit, children, ...restProps }) => {
   return (
-    <form onSubmit={handleSubmit} {...restProps}>
-      {props.children}
+    <form style={styles} onSubmit={handleSubmit} {...restProps}>
+      {children}
     </form>
   )
 }
 
-export const InputTextField = props => {
-  const { name, type } = props
-  return <input type="text-field" {...props} />
+Form.propTypes = {
+  styles: PropTypes.object,
+  onSubmit: PropTypes.func,
+  children: PropTypes.elementType
 }
+
+export default Form

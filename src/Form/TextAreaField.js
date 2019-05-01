@@ -1,18 +1,16 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
-const TextAreaInput = props => {
+const TextAreaField = ({
   //always deconstruct props so we know what we are working with visually
-  const {
-    type,
-    onChange,
-    name,
-    placeholder,
-    styles,
-    autocomplete,
-    ...restProps
-  } = props
-
+  type,
+  onChange,
+  name,
+  placeholder,
+  styles,
+  autocomplete,
+  ...restProps
+}) => {
   return (
     <input
       autocomplete={autocomplete}
@@ -26,7 +24,7 @@ const TextAreaInput = props => {
   )
 }
 
-TextAreaInput.propTypes = {
+TextAreaField.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
@@ -35,4 +33,4 @@ TextAreaInput.propTypes = {
   value: PropTypes.string
 }
 
-export default TextAreaInput
+export default TextAreaField

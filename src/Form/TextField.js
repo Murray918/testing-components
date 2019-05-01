@@ -1,26 +1,24 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
-//this is a proxy component for making a test input
-const TextInput = props => {
-  const {
-    type,
-    name,
-    onChange,
-    value,
-    style,
-    placeholder,
-    autocomplete,
-    ...restProps
-  } = props
-
+//this is a proxy component for making a text input
+const TextField = ({
+  type,
+  name,
+  handleChange,
+  value,
+  style,
+  placeholder,
+  autocomplete,
+  ...restProps
+}) => {
   return (
     <input
       style={style}
       type={type}
       name={name}
       value={value}
-      onChange={onChange}
+      onChange={handleChange}
       autocomplete={autocomplete}
       placeholder={placeholder}
       {...restProps}
@@ -28,13 +26,13 @@ const TextInput = props => {
   )
 }
 
-TextInput.propTypes = {
+TextField.propTypes = {
   name: PropTypes.string,
-  onChange: PropTypes.func,
+  handleChange: PropTypes.func,
   value: PropTypes.string,
   style: PropTypes.object,
   placeholder: PropTypes.string,
   autocomplete: PropTypes.bool
 }
 
-export default TextInput
+export default TextField
