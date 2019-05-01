@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+}
+
+img {
+  max-width: 40%;
+}
