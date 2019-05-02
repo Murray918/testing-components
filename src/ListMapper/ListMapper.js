@@ -8,14 +8,14 @@ export const ListMapper = props => {
   const { array, component: Component, children, ...restProps } = props
   const composedCards = array.map((item, index) => {
     return (
-      <li key={index}>
-        <Component item={item} key={index} {...restProps}>
+      <li style={styles.list} key={index}>
+        <Component styles={styles.list} item={item} key={index} {...restProps}>
           {children}
         </Component>
       </li>
     )
   })
-  return <ul style={styles.list}>{composedCards}</ul>
+  return <ul className={styles.list}>{composedCards}</ul>
 }
 
 export default ListMapper
